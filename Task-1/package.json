@@ -1,0 +1,28 @@
+{
+  "name": "task-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Didexe/CEIC.git"
+  },
+  "keywords": [
+    "excel",
+    "xls",
+    "xlsx"
+  ],
+  "author": "Daniel Petrov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Didexe/CEIC/issues"
+  },
+  "homepage": "https://github.com/Didexe/CEIC#readme",
+  "dependencies": {
+    "exceljs": "^0.4.13"
+  }
+}
