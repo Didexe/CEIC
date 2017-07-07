@@ -1,15 +1,17 @@
+
 const styles = require('./styles');
-const {rowGenerator, oddRowGenerator} = require('./generators/row.generator');
+const { rowGenerator, oddRowGenerator } = require('./generators/row.generator');
 
 const xl = require('exceljs');
 const wb = new xl.Workbook();
-const sheet = wb.addWorksheet('Sheet 1', {properties: {tabColor: {argb: 'FFC0000'}}});
-
+const sheet = wb.addWorksheet('Sheet 1',
+                { properties: { tabColor: { argb: 'FFC0000' } } } );
+// eslint-disable-next-line no-proto
 sheet.__proto__.styleRows = function styleRows(array, property, style) {
     array.forEach((i) => {
-        let row = sheet.getRow(i).font = style;
+        const row = sheet.getRow(i).font = style;
         return row;
-    })
+    });
 };
 
 sheet.columns = [
@@ -25,8 +27,8 @@ sheet.getRow(1).font = styles.headerText;
 
 sheet.addRows(rowGenerator());
 sheet.styleRows(oddRowGenerator(), 'font', styles.oddRowText);
-sheet.getCell('E2').value = {formula: 'AVERAGE(C2:C100)'};
+sheet.getCell('E2').value = { formula: 'AVERAGE(C2:C100)' };
 
 wb.xlsx.writeFile('scores.xlsx')
     .then(console.log('Operation Successful!'))
-    .catch(error => console.log(error));
+    .catch((error) => console.log(error));
