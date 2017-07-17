@@ -5,7 +5,7 @@ const randomGenerator = (min, max) => {
     const range = max - min + 1;
     const value = Math.floor( Math.random() * range ) + min;
     return value;
-    };
+};
 
 const rowGenerator = () => {
     const len = values.names.length - 1;

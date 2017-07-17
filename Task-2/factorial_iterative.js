@@ -1,10 +1,11 @@
 function iterativeFactorialWhileLoop(min, max) {
     let result = min;
-    let i = 0;
+    let i = min;
     while (i < max) {
         if (result === 0) {
             console.log(1);
             result = 1;
+            i += 1;
             continue;
         }
         if (result === 1) {
@@ -36,3 +37,6 @@ module.exports = {
     iterativeFactorialWhileLoop,
     iterativeFactorialForLoop,
 };
+
+
+iterativeFactorialWhileLoop(1, 5)
